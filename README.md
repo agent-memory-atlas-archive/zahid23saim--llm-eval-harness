@@ -1,5 +1,10 @@
 # llm-eval-harness
 
+[![CI](https://github.com/zahid23saim/llm-eval-harness/actions/workflows/ci.yml/badge.svg)](https://github.com/zahid23saim/llm-eval-harness/actions/workflows/ci.yml)
+![Python 3.8+](https://img.shields.io/badge/python-3.8%2B-3776AB?logo=python&logoColor=white)
+![No dependencies](https://img.shields.io/badge/dependencies-none-2a78d6)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 A tiny, dependency-free harness for scoring LLM answers against a gold set.
 
 Evaluating a language model by hand stops scaling almost immediately. Ten answers
@@ -7,6 +12,8 @@ are fine; a thousand, re-run every time someone tweaks a prompt, is not. This is
 small, boring Python tool that makes the evaluation **consistent and repeatable**:
 give it a set of questions with known answers and the model's answers, and it
 returns an accuracy score plus a list of exactly which items failed and why.
+
+![The kit's regression diff — compare two runs and see exactly which cases broke, wired for CI](demo-diff.gif)
 
 - **No dependencies.** Standard library only (Python 3.8+).
 - **Per-question match rules** — `exact`, `contains`, `numeric` (with tolerance) —
@@ -117,7 +124,6 @@ This grew out of a write-up on automating LLM answer evaluation:
 
 ## Pro version — LLM-Eval Starter Kit
 
-![The kit's regression diff — compare two runs and see exactly which cases broke, wired for CI](demo-diff.gif)
 
 This harness covers `exact` / `contains` / `numeric` matching, and it's free forever (MIT).
 
